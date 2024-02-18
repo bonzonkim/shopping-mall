@@ -1,11 +1,11 @@
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useQuery} from "@tanstack/react-query";
 import {Product} from "../../types.ts";
 import {fetcher, QueryKeys} from "../../queryClient.ts";
 import ProductDetail from '../../components/products/detail.tsx';
 
 const ProductDetailPage = () => {
-  let { id } = useParams<"id">();
+  const { id } = useParams<"id">();
   const { data } = useQuery<Product>({
     queryKey: [QueryKeys.PRODUCTS, id],
     queryFn: () =>
