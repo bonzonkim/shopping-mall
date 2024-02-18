@@ -4,6 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { getClient } from '../queryClient';
 import '../scss/index.scss'
+import Gnb from '../components/gnb';
 
 const Layout: React.FC = () => {
   const queryClient = getClient();
@@ -11,6 +12,7 @@ const Layout: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Suspense fallback={'loading...'}>
+        <Gnb />
         <Outlet />
       </Suspense>
       <ReactQueryDevtools initialIsOpen={false} />
