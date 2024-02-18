@@ -1,7 +1,4 @@
-import {
-  QueryClient,
-} from '@tanstack/react-query';
-//import { getTodos, postTodo } from '../my-api';
+import {QueryClient} from '@tanstack/react-query';
 
 type AnyObj = { [key: string]: any}
 
