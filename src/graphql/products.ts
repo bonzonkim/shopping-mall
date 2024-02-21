@@ -7,7 +7,6 @@ export type PRODUCT = {
   title: string
   description: string
   createdAt: string
-
 }
 
 
