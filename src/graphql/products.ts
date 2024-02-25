@@ -11,7 +11,7 @@ export type PRODUCT = {
 
 
 const GET_PRODUCTS = gql`
-  qeury GET_PRODUCTS {
+  query GET_PRODUCTS {
     id
     imageUrl
     price

@@ -7,6 +7,13 @@ import '../scss/index.scss'
 import Gnb from '../components/gnb';
 
 const Layout: React.FC = () => {
+
+  if(import.meta.env.DEV) {
+    import('../mocks/browser').then(({ worker}) => {
+      worker.start();
+    });
+  }
+
   const queryClient = getClient();
 
   return (

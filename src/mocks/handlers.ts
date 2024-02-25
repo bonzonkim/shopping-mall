@@ -1,5 +1,4 @@
 import { graphql } from 'msw';
-import { QueryKeys } from '../queryClient';
 import { v4 as uuid } from 'uuid';
 import GET_PRODUCTS from '../graphql/products';
 
@@ -17,9 +16,8 @@ export const handlers = [
   graphql.query(GET_PRODUCTS, (req, res, ctx) => {
     return res(
       ctx.data({
-        products: mock_products
-      })
-    );
+        products: mock_products,
+      }),
+    )
   }),
-];
-
+]
