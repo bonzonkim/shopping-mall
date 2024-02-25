@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag';
+import gql from 'graphql-tag';
 
 export type PRODUCT = {
   id: string
@@ -7,6 +7,10 @@ export type PRODUCT = {
   title: string
   description: string
   createdAt: string
+}
+
+export type PRODUCTS = {
+  products: PRODUCT[]
 }
 
 
