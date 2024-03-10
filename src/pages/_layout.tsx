@@ -5,13 +5,12 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { getClient } from '../queryClient';
 import '../scss/index.scss'
 import Gnb from '../components/gnb';
+import { worker } from '../mocks/browser';
 
 const Layout: React.FC = () => {
 
   if(import.meta.env.DEV) {
-    import('../mocks/browser').then(({ worker}) => {
-      worker.start();
-    });
+    worker.start();
   }
 
   const queryClient = getClient();

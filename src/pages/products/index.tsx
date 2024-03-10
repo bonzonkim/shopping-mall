@@ -4,10 +4,12 @@ import GET_PRODUCTS, { PRODUCTS } from '../../graphql/products.ts';
 import ProductItem from '../../components/products/item.tsx';
 
 const ProductList = () => {
-  const { data } = useQuery<PRODUCTS>({
-    queryKey: [QueryKeys.PRODUCTS],
-    queryFn: graphqlFetcher(GET_PRODUCTS)
-  })
+  const { data } = useQuery<PRODUCTS>(
+    {
+      queryKey: [QueryKeys.PRODUCTS],
+      queryFn: graphqlFetcher(GET_PRODUCTS)
+    }
+  )
 
   return (
   <div>

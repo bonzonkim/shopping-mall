@@ -6,7 +6,7 @@ import ProductItem from '../../components/products/item.tsx';
 export const ProductList = () => {
     const { data } = useQuery<PRODUCTS>({
         queryKey: [QueryKeys.PRODUCTS],
-        queryFn: graphqlFetcher(GET_PRODUCTS)
+        queryFn: () => graphqlFetcher(GET_PRODUCTS),
     });
 
     return (

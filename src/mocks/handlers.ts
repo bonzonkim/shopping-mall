@@ -13,11 +13,18 @@ const mock_products = Array.from({ length: 20 }).map(
 )
 
 export const handlers = [
-  graphql.query(GET_PRODUCTS, (req, res, ctx) => {
+  graphql.query(GET_PRODUCTS, (_req, res, ctx) => {
     return res(
       ctx.data({
         products: mock_products,
       }),
     )
   }),
-]
+
+  graphql.query(GET_PRODUCTS, (req, res, ctx) => {
+    const found = mock_products.find(item => item.id === req.id)
+    console.log(req.id, found)
+    if (!found) return res()
+    return res(ctx.data(found))
+  }),
+];

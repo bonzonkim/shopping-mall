@@ -1,5 +1,6 @@
 import {QueryClient} from '@tanstack/react-query';
 import {RequestDocument, request} from 'graphql-request';
+import { PRODUCTS } from './graphql/products';
 
 type AnyObj = { [key: string]: any}
 
@@ -58,8 +59,8 @@ export const restFetcher = async ({
   }
 };
 
-export const graphqlFetcher = (query: RequestDocument, variables = {}) => {
-  request(BASE_URL, query, variables)
+export const graphqlFetcher = async (query: RequestDocument, variables = {}): Promise<PRODUCTS> => {
+  return  await request(BASE_URL, query, variables) as PRODUCTS;
 }
 
 export const QueryKeys = {
